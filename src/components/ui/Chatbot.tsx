@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { therapist } from "@/data/therapist";
 
 export function Chatbot() {
@@ -61,14 +62,17 @@ export function Chatbot() {
             style={{ height: '450px', maxHeight: 'calc(100vh - 8rem)' }}
           >
             {/* Header */}
-            <div className="bg-[var(--color-brand-primary)] text-white p-4 flex justify-between items-center">
+            <div className="bg-[var(--color-brand-primary)] text-white p-4 flex justify-between items-center shadow-md z-10">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center font-serif text-lg">
-                  {therapist.name.charAt(0)}
+                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-white/30 shadow-inner">
+                  <Image src="/images/bot_avatar.png" alt="Assistant Profile" width={40} height={40} className="object-cover w-full h-full" />
                 </div>
                 <div>
                   <h4 className="font-medium text-sm">{therapist.name.split(',')[0]}'s Assistant</h4>
-                  <p className="text-xs text-white/70">Typically replies instantly</p>
+                  <p className="text-xs text-white/80 font-light flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 bg-green-400 rounded-full inline-block animate-pulse"></span>
+                    Online
+                  </p>
                 </div>
               </div>
               <button onClick={() => setIsOpen(false)} className="text-white/80 hover:text-white transition-colors" aria-label="Close chat">
@@ -125,7 +129,7 @@ export function Chatbot() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-[var(--color-brand-primary)] text-white rounded-full shadow-xl flex items-center justify-center hover:bg-[var(--color-brand-dark)] transition-colors duration-300 relative"
+        className="w-14 h-14 bg-[var(--color-brand-primary)] text-white rounded-full shadow-xl flex items-center justify-center hover:bg-[var(--color-brand-dark)] transition-colors duration-300 relative border border-white/10"
         aria-label="Toggle chat"
       >
         {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
