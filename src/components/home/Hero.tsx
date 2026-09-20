@@ -9,8 +9,10 @@ import { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <section className="relative min-h-screen md:min-h-[90vh] flex flex-col md:flex-row items-center pt-20 md:pt-0 overflow-hidden bg-[var(--color-brand-background)]">
+      
+      {/* Mobile Image (Visible only on mobile) */}
+      <div className="w-full h-[45vh] relative md:hidden shrink-0 mt-4">
         <motion.div
           initial={{ scale: 1.05 }}
           animate={{ scale: 1 }}
@@ -21,14 +23,34 @@ export function Hero() {
             src="/images/maya_hero.png"
             alt="Dr. Maya Reynolds in her office"
             fill
-            className="object-cover object-right md:object-center opacity-80"
+            className="object-cover object-top"
+            priority
+          />
+        </motion.div>
+        {/* Gradient to blend into the text section below */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[var(--color-brand-background)] to-transparent" />
+      </div>
+
+      {/* Desktop Background Image (Hidden on mobile) */}
+      <div className="absolute inset-0 z-0 hidden md:block">
+        <motion.div
+          initial={{ scale: 1.05 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="w-full h-full relative"
+        >
+          <Image
+            src="/images/maya_hero.png"
+            alt="Dr. Maya Reynolds in her office"
+            fill
+            className="object-cover object-center opacity-80"
             priority
           />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-brand-background)] via-[var(--color-brand-background)]/80 to-transparent" />
       </div>
       
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 py-10 md:py-0">
         <StaggerContainer delay={0.2} className="max-w-2xl">
           <StaggerItem>
             <div className="inline-block px-4 py-1.5 border border-[var(--color-brand-primary)]/30 text-xs font-medium tracking-widest text-[var(--color-brand-primary)] uppercase mb-8">
