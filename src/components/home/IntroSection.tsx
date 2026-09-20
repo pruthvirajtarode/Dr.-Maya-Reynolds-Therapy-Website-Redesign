@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { therapist } from "@/data/therapist";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 export function IntroSection() {
   return (
@@ -8,8 +9,7 @@ export function IntroSection() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
-          {/* Image */}
-          <div className="relative">
+          <FadeIn direction="right" duration={1} delay={0.2} className="relative">
             <div className="aspect-[4/5] relative w-full max-w-md mx-auto lg:mr-auto">
               <Image 
                 src="/images/maya_hero.png" 
@@ -20,10 +20,9 @@ export function IntroSection() {
               <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-[var(--color-brand-soft)] -z-10 rounded-sm" />
               <div className="absolute -top-8 -left-8 w-48 h-48 border border-[var(--color-brand-secondary)] -z-10 rounded-sm" />
             </div>
-          </div>
+          </FadeIn>
 
-          {/* Content */}
-          <div className="max-w-xl">
+          <FadeIn direction="left" duration={1} delay={0.4} className="max-w-xl">
             <h2 className="text-sm font-medium tracking-widest text-[var(--color-brand-primary)] uppercase mb-4">
               MEET {therapist.name.split(',')[0]}
             </h2>
@@ -38,7 +37,7 @@ export function IntroSection() {
             <Link href="#contact" className="inline-block border-b border-[var(--color-brand-primary)] pb-1 text-[var(--color-brand-primary)] font-medium tracking-wide hover:text-[var(--color-brand-dark)] hover:border-[var(--color-brand-dark)] transition-colors">
               Read More About Me
             </Link>
-          </div>
+          </FadeIn>
           
         </div>
       </div>

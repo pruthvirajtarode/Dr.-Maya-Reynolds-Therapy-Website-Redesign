@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 
 export function Services() {
   const services = [
@@ -22,36 +23,39 @@ export function Services() {
   ];
 
   return (
-    <section id="services" className="py-24 md:py-32 bg-[var(--color-brand-background)]">
+    <section id="services" className="py-24 md:py-32 bg-[var(--color-brand-background)] overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="text-center mb-20 max-w-2xl mx-auto">
+        <FadeIn className="text-center mb-20 max-w-2xl mx-auto">
           <h2 className="text-sm font-medium tracking-widest text-[var(--color-brand-primary)] uppercase mb-4">AREAS OF FOCUS</h2>
           <h3 className="text-4xl md:text-5xl font-serif text-[var(--color-brand-dark)] leading-tight">
             How I can help you move forward.
           </h3>
-        </div>
+        </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {services.map((service, i) => (
-            <div key={i} className="group cursor-pointer">
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm mb-8">
-                <Image 
-                  src={service.image} 
-                  alt={service.title} 
-                  fill 
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+            <StaggerItem key={i}>
+              <div className="group cursor-pointer">
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm mb-8">
+                  <Image 
+                    src={service.image} 
+                    alt={service.title} 
+                    fill 
+                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700" />
+                </div>
+                <h4 className="text-2xl font-serif text-[var(--color-brand-dark)] mb-4">{service.title}</h4>
+                <p className="text-[var(--color-brand-dark)]/70 font-light leading-relaxed mb-6">
+                  {service.description}
+                </p>
+                <Link href="#contact" className="inline-flex items-center gap-2 text-sm font-medium tracking-wide text-[var(--color-brand-primary)] group-hover:text-[var(--color-brand-accent)] transition-colors">
+                  Explore Approach <MoveRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                </Link>
               </div>
-              <h4 className="text-2xl font-serif text-[var(--color-brand-dark)] mb-4">{service.title}</h4>
-              <p className="text-[var(--color-brand-dark)]/70 font-light leading-relaxed mb-6">
-                {service.description}
-              </p>
-              <Link href="#contact" className="inline-flex items-center gap-2 text-sm font-medium tracking-wide text-[var(--color-brand-primary)] group-hover:text-[var(--color-brand-dark)] transition-colors">
-                Explore Approach <MoveRight className="w-4 h-4" />
-              </Link>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
