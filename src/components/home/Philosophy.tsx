@@ -32,7 +32,7 @@ export function Philosophy() {
       <div className="container mx-auto px-6 md:px-12 relative z-10 text-center max-w-4xl">
         <FadeIn delay={0.1}>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-tight mb-10">
-            "You don't have to navigate the next chapter alone."
+            &quot;You don&apos;t have to navigate the next chapter alone.&quot;
           </h2>
         </FadeIn>
         <FadeIn delay={0.3}>

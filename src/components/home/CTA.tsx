@@ -23,7 +23,7 @@ export function CTA() {
                 Take the first step toward feeling better.
               </h3>
               <p className="text-white/80 font-light leading-relaxed mb-10 max-w-lg">
-                Please fill out the form below to schedule a free 15-minute consultation. We'll discuss what you're looking for and see if we're a good fit to work together.
+                Please fill out the form below to schedule a free 15-minute consultation. We&apos;ll discuss what you&apos;re looking for and see if we&apos;re a good fit to work together.
               </p>
               <div className="space-y-4 text-white/90">
                 <p><strong>Office:</strong> {therapist.office.location}</p>

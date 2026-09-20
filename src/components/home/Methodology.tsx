@@ -15,7 +15,7 @@ export function Methodology() {
                 Evidence-based methods with depth.
               </h3>
               <p className="text-[var(--color-brand-dark)]/70 font-light leading-relaxed">
-                I integrate several approaches to help you understand both the emotional and physiological sides of what you're experiencing. My approach is paced carefully, with an emphasis on safety and stabilization.
+                I integrate several approaches to help you understand both the emotional and physiological sides of what you&apos;re experiencing. My approach is paced carefully, with an emphasis on safety and stabilization.
               </p>
             </FadeIn>
           </div>

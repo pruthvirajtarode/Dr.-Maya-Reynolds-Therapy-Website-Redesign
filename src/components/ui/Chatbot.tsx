@@ -68,7 +68,7 @@ export function Chatbot() {
                   <Image src="/images/bot_avatar.png" alt="Assistant Profile" width={40} height={40} className="object-cover w-full h-full" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-sm">{therapist.name.split(',')[0]}'s Assistant</h4>
+                  <h4 className="font-medium text-sm">{therapist.name.split(',')[0]}&apos;s Assistant</h4>
                   <p className="text-xs text-white/80 font-light flex items-center gap-1">
                     <span className="w-1.5 h-1.5 bg-green-400 rounded-full inline-block animate-pulse"></span>
                     Online
