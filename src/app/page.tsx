@@ -10,6 +10,8 @@ import { OurOffice } from "@/components/home/OurOffice";
 import { Philosophy } from "@/components/home/Philosophy";
 import { FAQ } from "@/components/home/FAQ";
 import { CTA } from "@/components/home/CTA";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { Chatbot } from "@/components/ui/Chatbot";
 
 export default function Home() {
   return (
@@ -28,6 +30,8 @@ export default function Home() {
         <CTA />
       </main>
       <Footer />
+      <ScrollToTop />
+      <Chatbot />
     </>
   );
 }
